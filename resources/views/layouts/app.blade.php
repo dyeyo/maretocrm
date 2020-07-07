@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Lector AMI CRM</title>
+    <title>Mareto CRM</title>
     <script src="https://kit.fontawesome.com/7e8f963e2a.js" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/morrisjs/morris.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
