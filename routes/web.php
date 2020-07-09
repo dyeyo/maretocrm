@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
   if (Auth::check()) {
     return redirect('/home');
-  } else{
+  } else {
     return view('auth.login');
   }
 });
@@ -48,6 +48,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/pago/{id}', 'HomeController@paySuccess')->name('paySuccess');
     Route::get('/clientes/editar/{id}',  'ClientsController@edit')->name('clientsEdit');
     Route::put('/clientes/update/{id}',  'ClientsController@updateCliente')->name('updateCliente');
+    Route::get('/clientes/contrato/{id}',  'ClientsController@dowloadContract')->name('dowloadContract');
+    Route::delete('/clientes/eliminar/{id}',  'ClientsController@delete')->name('deleteClient');
 
     //ASESOR
     Route::get('/asesores', 'AsesorController@index')->name('asesors');
@@ -68,10 +70,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     //EXCEL
     Route::get('/clientes/excel', 'ClientsController@loadExcel')->name('loadExcel');
-
   });
-
 });
-
-
-

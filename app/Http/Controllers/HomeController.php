@@ -14,81 +14,95 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-      $this->middleware('auth');
-    }
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
 
-    public function index()
-    {
-      $clientesPaySuccess = Clients::with('asesor')->where('pay','SI')->get();
-      $clientesPayPending = Clients::with('asesor')->where('pay',null)->get();
-      $clientesAsesor = Clients::with('asesor')
-                        ->where('pay','SI')
-                        ->where('asesorId',Auth()->user()->id)
-                        ->get();
-      $contracts = Contracts::all();
-      $emailsPromotions = Contracts::where('emailId','!=',null)->get();
-      $clientesPaySuccessCount = Clients::with('asesor')->where('pay','SI')->count();
-      $clientesPayPendingCount = Clients::with('asesor')->where('pay',null)->count();
-      $asesorCount  = User::where('role',2)->count();
+  public function index()
+  {
+    $clientesPaySuccess = Clients::with('asesor')->where('pay', 'SI')->get();
+    $clientesPayPending = Clients::with('asesor')->where('pay', null)->get();
+    $clientesAsesor = Clients::with('asesor')
+      ->where('pay', 'SI')
+      ->where('asesorId', Auth()->user()->id)
+      ->get();
+    $contracts = Contracts::all();
+    $emailsPromotions = Contracts::where('emailId', '!=', null)->get();
+    $clientesPaySuccessCount = Clients::with('asesor')->where('pay', 'SI')->count();
+    $clientesPayPendingCount = Clients::with('asesor')->where('pay', null)->count();
+    $asesorCount  = User::where('role', 2)->count();
 
-      $clientesPaySuccessAsesorCount = Clients::with('asesor')
-                                    ->where('pay','SI')
-                                    ->where('asesorId',Auth()->user()->id)
-                                    ->count();
-      $clientesPayPendingAsesorCount = Clients::with('asesor')
-                                    ->where('pay',null)
-                                    ->where('asesorId',Auth()->user()->id)
-                                    ->count();
+    $clientesPaySuccessAsesorCount = Clients::with('asesor')
+      ->where('pay', 'SI')
+      ->where('asesorId', Auth()->user()->id)
+      ->count();
+    $clientesPayPendingAsesorCount = Clients::with('asesor')
+      ->where('pay', null)
+      ->where('asesorId', Auth()->user()->id)
+      ->count();
 
-      $clients = Clients::where('pay',null)->get();
-      $allClients = Clients::where('pay','!=',null)->get();
-      return view('home',compact('clientesPaySuccess','clientesPayPending','clientesAsesor','contracts',
-      'clientesPaySuccessCount','clientesPayPendingCount','asesorCount','clientesPaySuccessAsesorCount',
-      'clientesPayPendingAsesorCount','clients','emailsPromotions','allClients'));
-    }
+    $clients = Clients::where('pay', null)->get();
+    $allClients = Clients::where('pay', '!=', null)->get();
+    $allClientsAsesor = Clients::with('asesor')
+      ->where('pay', '!=', null)
+      ->where('asesorId', Auth()->user()->id)
+      ->get();
+    return view('home', compact(
+      'clientesPaySuccess',
+      'clientesPayPending',
+      'clientesAsesor',
+      'contracts',
+      'clientesPaySuccessCount',
+      'clientesPayPendingCount',
+      'asesorCount',
+      'clientesPaySuccessAsesorCount',
+      'clientesPayPendingAsesorCount',
+      'clients',
+      'emailsPromotions',
+      'allClients',
+      'allClientsAsesor'
+    ));
+  }
 
-    public function sendinfopay(Request $request)
-    {
-      if($request->email){
-        if($request->tipoContrato == "1"){
-          Mail::to($request->email)->send(new LectorAmiContado());
-          Session::flash('message', 'Correo electronico enviado con exito');
-          return redirect()->route('home');
-        }
-        elseif($request->tipoContrato == "2" || $request->tipoContrato == "3"){
-          Mail::to($request->email)->send(new lectorAmiCuotas());
-          Session::flash('message', 'Correo electronico enviado con exito');
-          return redirect()->route('home');
-        }else{
-          Mail::to($request->email)->send(new MailSendemailpayDefault());
-          Session::flash('message', 'Correo electronico enviado con exito');
-          return redirect()->route('home');
-        }
-      }else{
-        Session::flash('messageErrorEmail', 'Ocurrio un error, por favor selecciona nuevamente el cliente o actualiza la pagina');
+  public function sendinfopay(Request $request)
+  {
+    if ($request->email) {
+      if ($request->tipoContrato == "1") {
+        Mail::to($request->email)->send(new LectorAmiContado());
+        Session::flash('message', 'Correo electronico enviado con exito');
+        return redirect()->route('home');
+      } elseif ($request->tipoContrato == "2" || $request->tipoContrato == "3") {
+        Mail::to($request->email)->send(new lectorAmiCuotas());
+        Session::flash('message', 'Correo electronico enviado con exito');
+        return redirect()->route('home');
+      } else {
+        Mail::to($request->email)->send(new MailSendemailpayDefault());
+        Session::flash('message', 'Correo electronico enviado con exito');
         return redirect()->route('home');
       }
-
-    }
-
-    public function loadClient($id)
-    {
-      return response()->json(Clients::where('id', $id)->get());
-    }
-
-    public function loadClientSendEmail($id)
-    {
-      return response()->json(Clients::where('id', $id)->get());
-    }
-
-    public function paySuccess(Request $request, $id)
-    {
-      $client = Clients::find($id);
-      $client->pay = $request->pay;
-      $client->save();
-      Session::flash('message', 'Pago validado con exito');
+    } else {
+      Session::flash('messageErrorEmail', 'Ocurrio un error, por favor selecciona nuevamente el cliente o actualiza la pagina');
       return redirect()->route('home');
     }
+  }
+
+  public function loadClient($id)
+  {
+    return response()->json(Clients::where('id', $id)->get());
+  }
+
+  public function loadClientSendEmail($id)
+  {
+    return response()->json(Clients::where('id', $id)->get());
+  }
+
+  public function paySuccess(Request $request, $id)
+  {
+    $client = Clients::find($id);
+    $client->pay = $request->pay;
+    $client->save();
+    Session::flash('message', 'Pago validado con exito');
+    return redirect()->route('home');
+  }
 }

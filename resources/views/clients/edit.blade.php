@@ -89,7 +89,6 @@
               </div>
               <div class="form-group row">
                   <label for="phone" class="col-md-12 col-form-label">Numero de Telefono</label>
-
                   <div class="col-md-12">
                       <input value="{{$client->phone}}" id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
                       @error('phone')
@@ -99,8 +98,21 @@
                       @enderror
                   </div>
               </div>
+              <div class="form-group row">
+                  <label for="phone" class="col-md-12 col-form-label">Contrato</label>
+                  <div class="col-md-12">
+                    <textarea class="form-control" id="" rows="10" style="resize: none" disabled>{{$client->contract}}</textarea>
+                    <a href="{{ route('dowloadContract',$client->id ) }}">Descargar Contrato</a>
+                  </div>
+              </div>
               <button type="submit" class="btn btn-primary">Editar Cliente</button>
               <a href="/clientes" class="btn btn-warning">Cancelar</a>
+
+            </form>
+            <form class="user"  action="{{route('deleteClient', $client->id)}}" method="post">
+              {{ method_field('delete') }}
+              {{csrf_field()}}
+              <button class="btn btn-danger pull-right" onclick="return confirm('¿Esta seguro de eliminar este registro?')"  type="submit">ELIMINAR</button>
             </form>
           </div>
         </div>
