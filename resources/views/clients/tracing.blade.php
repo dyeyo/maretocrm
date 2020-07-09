@@ -30,7 +30,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                   </div>
                 @endif
-                  <div class="table-responsive">
+                  <div class="table-responsive-sm">
                     <table id="tabla" class="table m-t-30 table-hover no-wrap contact-list footable-loaded footable" data-page-size="10">
                       <thead>
                         <tr>

@@ -42,8 +42,13 @@ class HomeController extends Controller
       ->where('asesorId', Auth()->user()->id)
       ->count();
 
-    $clients = Clients::where('pay', null)->get();
-    $allClients = Clients::where('pay', '!=', null)->get();
+    $clients = Clients::with('asesor')
+      ->where('pay', null)
+      ->where('asesorId', Auth()->user()->id)
+      ->get();
+
+    $allClients = Clients::where('pay', null)->get();
+    $allClientsPromocion = Clients::where('pay', 'SI')->get();
     $allClientsAsesor = Clients::with('asesor')
       ->where('pay', '!=', null)
       ->where('asesorId', Auth()->user()->id)
@@ -61,7 +66,8 @@ class HomeController extends Controller
       'clients',
       'emailsPromotions',
       'allClients',
-      'allClientsAsesor'
+      'allClientsAsesor',
+      'allClientsPromocion'
     ));
   }
 

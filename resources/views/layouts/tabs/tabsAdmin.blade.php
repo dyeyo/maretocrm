@@ -102,7 +102,7 @@
             <div class="form-group col-md-12">
               <select class="form-control datoCliente select2" onchange="dataClient()" style="width: 100%" name="nombreEstudiante">
                 <option value=""></option>
-                @foreach ($clients as $client)
+                @foreach ($allClients as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
                 @endforeach
               </select>
@@ -147,7 +147,7 @@
             <div class="form-group col-md-12">
               <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreEstudiante">
                 <option value=""></option>
-                @foreach ($allClients as $client)
+                @foreach ($allClientsPromocion as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
                 @endforeach
               </select>

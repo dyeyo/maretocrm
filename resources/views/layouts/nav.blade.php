@@ -1,6 +1,6 @@
 <header class="topbar">
   <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-      <div class="navbar-header">
+      <div class="navbar-header" style="background: #222;">
         <a class="navbar-brand" href="/home">
           <b>
               <img src="{{ asset('assets/img/logo.png') }}" alt="homepage" style="width: 95%" class="light-logo">
@@ -27,7 +27,7 @@
       </div>
   </nav>
 </header>
-<aside class="left-sidebar" style="background: #ff7f00;">
+<aside class="left-sidebar" style="background: #222;">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
         <!-- User Profile-->

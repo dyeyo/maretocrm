@@ -32,36 +32,38 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               </div>
             @endif
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Titulo</th>
-                  <th scope="col">Texto Primario</th>
-                  <th scope="col">Tipo de Plantilla</th>
-                  <th scope="col">Editar</th>
-                  <th scope="col">Eliminar</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($templatesEmail as $item)
+            <div class="table-responsive-sm">
+              <table class="table">
+                <thead>
                   <tr>
-                    <th scope="row">{{$item->title}}</th>
-                    <td>{{$item->firstText}}</td>
-                    <td>{{$item->type == 1 ? 'Plantilla Pago' : 'Plantilla Contrato'}}</td>
-                    <td>
-                      <a class="btn btn-warning" href="{{ route('editPlantilla',$item->id) }}">Editar</a>
-                    </td>
-                    <td>
-                      <form class="user"  action="{{route('deleteEmail', $item->id)}}" method="post">
-                        {{ method_field('delete') }}
-                        {{csrf_field()}}
-                        <button class="btn btn-btn-outline-light"  onclick="return confirm('¿Esta seguro de eliminar este registro?')"  type="submit">ELIMINAR</button>
-                      </form>
-                    </td>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Texto Primario</th>
+                    <th scope="col">Tipo de Plantilla</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
                   </tr>
-                @endforeach
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  @foreach ($templatesEmail as $item)
+                    <tr>
+                      <th scope="row">{{$item->title}}</th>
+                      <td>{{$item->firstText}}</td>
+                      <td>{{$item->type == 1 ? 'Plantilla Pago' : 'Plantilla Contrato'}}</td>
+                      <td>
+                        <a class="btn btn-warning" href="{{ route('editPlantilla',$item->id) }}">Editar</a>
+                      </td>
+                      <td>
+                        <form class="user"  action="{{route('deleteEmail', $item->id)}}" method="post">
+                          {{ method_field('delete') }}
+                          {{csrf_field()}}
+                          <button class="btn btn-btn-outline-light"  onclick="return confirm('¿Esta seguro de eliminar este registro?')"  type="submit">ELIMINAR</button>
+                        </form>
+                      </td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

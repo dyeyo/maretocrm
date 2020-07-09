@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Inicio</a></li>
               <li class="breadcrumb-item"><a href="/asesores">Gestion de Asesores</a></li>
-              <li class="breadcrumb-item activate"><a href="#">Editar Asesore</a></li>
+              <li class="breadcrumb-item activate"><a href="#">Editar Asesor</a></li>
             </ol>
         </div>
       </div>
@@ -91,7 +91,7 @@
                   <input id="password" type="text" class="form-control" name="password" value="{{ old('password') }}" autocomplete="password" autofocus>
               </div>
             </div>
-              <button type="submit" class="btn btn-primary">Editar Contrato</button>
+              <button type="submit" class="btn btn-primary">Editar Asesor</button>
               <a href="/asesores" class="btn btn-warning">Cancelar</a>
             </form>
           </div>

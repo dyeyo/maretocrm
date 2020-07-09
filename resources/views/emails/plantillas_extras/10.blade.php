@@ -27,7 +27,7 @@
 <body>
   @foreach ($templateSelected as $item)
     <div class="contenedor" style="width: 650px; background: #fff; margin: auto;">
-      <h3 style="text-align: center;">{{ $client['name'] }} Gracias por elegirnos. 3</h3>
+      <h3 style="text-align: center;">{{ $client['name'] }} Gracias por elegirnos. </h3>
       <img style='display: block; width: 100%; padding-bottom: 40px;' src='{{ asset('assets/img/01.png') }}'>
       <p>{{$item->firstText}}</p>
       <img src="{{asset('images/'.$item->image)}}" style="width: 50%" alt="">

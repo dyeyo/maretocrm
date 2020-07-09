@@ -94,7 +94,7 @@
             <div class="form-group col-md-12">
               <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreEstudiante">
                 <option value=""></option>
-                @foreach ($allClients as $client)
+                @foreach ($allClientsAsesor as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
                 @endforeach
               </select>
