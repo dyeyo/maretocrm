@@ -11,9 +11,12 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item active">Tareas</li>
+            <li>
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-plus-circle"></i> Agregar Tarea</button>
+            </li>
           </ol>
-          <button type="button" class="btn btn-info d-none d-lg-block m-l-15" data-toggle="modal" data-target="#exampleModal">
-          <i class="fa fa-plus-circle"></i> Agregar Tarea</button>
+
         </div>
       </div>
   </div>
@@ -27,7 +30,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               </div>
             @endif
-            <div class="table-responsive-sm">
+            <div class="table-responsive">
               <table class="table" id="tabla">
                 <thead>
                   <tr>

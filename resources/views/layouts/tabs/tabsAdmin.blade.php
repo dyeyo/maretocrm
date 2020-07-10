@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12 formcontent">
         <h1>Clientes Matriculados</h1>
-        <div class="">
+        <div class="table-responsive">
           <table class="table" id="tabla">
             <thead>
               <tr>
@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-md-12 formcontent">
         <h1>Clientes Pendientes Pago (Frios)</h1>
-        <div class="">
+        <div class="table-responsive">
           <table class="table" id="tabla">
             <thead>
               <tr>

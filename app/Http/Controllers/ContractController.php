@@ -17,19 +17,19 @@ class ContractController extends Controller
   public function index()
   {
     $contracts = Contracts::all();
-    $templatesEmail = TemplateEmail::where('id','>',2)->get();
-    return view('formsContrato.index',compact('contracts','templatesEmail'));
+    $templatesEmail = TemplateEmail::where('id', '>', 2)->get();
+    return view('formsContrato.index', compact('contracts', 'templatesEmail'));
   }
 
   public function contract()
   {
     $contractsCount = Contracts::count();
     $s = $_GET['contrato'];
-    $contract = Contracts::where('id',$_GET['contrato'])->get();
+    $contract = Contracts::where('id', $_GET['contrato'])->get();
     $tituloContrato = $contract[0]->title;
     $date_now = date("Y-m-d");
     $date_now_hours = date("Y-m-d H:i:s");
-    return view('formsContrato.contract',compact('contractsCount','contract','date_now','date_now_hours','tituloContrato'));
+    return view('formsContrato.contract', compact('contractsCount', 'contract', 'date_now', 'date_now_hours', 'tituloContrato'));
   }
 
   public function store(Request $request)
@@ -42,8 +42,8 @@ class ContractController extends Controller
   public function editContract(Request $request, $id)
   {
     $contract = Contracts::with('emails')->find($id);
-    $templatesEmail = TemplateEmail::where('id','>',2)->get();
-    return view('formsContrato.edit',compact('contract','templatesEmail'));
+    $templatesEmail = TemplateEmail::where('id', '>', 2)->get();
+    return view('formsContrato.edit', compact('contract', 'templatesEmail'));
   }
 
   public function updateContract(Request $request, $id)
@@ -88,5 +88,4 @@ class ContractController extends Controller
     Session::flash('message', 'Contrato eliminada con exito');
     return redirect()->route('contracs');
   }
-
 }

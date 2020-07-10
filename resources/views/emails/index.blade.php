@@ -11,14 +11,17 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Inicio</a></li>
               <li class="breadcrumb-item active">Plantillas de Correos</li>
+              <li>
+              @if ($templatesEmailCount == 13)
+                <button type="button" class="btn btn-danger" disabled>
+                <i class="fa fa-dismit"></i> Limite de Plantillas</button>
+              @else
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-plus-circle"></i> Agregar Plantilla</button>
+              @endif
+              </li>
             </ol>
-            @if ($templatesEmailCount == 13)
-              <button type="button" class="btn btn-danger d-none d-lg-block m-l-15" disabled>
-              <i class="fa fa-dismit"></i> Limite de Plantillas</button>
-            @else
-              <button type="button" class="btn btn-info d-none d-lg-block m-l-15" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-plus-circle"></i> Agregar Plantilla</button>
-            @endif
+
         </div>
       </div>
     </div>
@@ -32,7 +35,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               </div>
             @endif
-            <div class="table-responsive-sm">
+            <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
