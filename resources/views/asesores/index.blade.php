@@ -12,12 +12,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item active">Asesores</li>
-            <li>
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+            <li class="breadcrumb-item">
+              <button type="button" class="btn btn-info btn-circle btngrande" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-plus-circle"></i> Agregar Asesor</button>
+              <button type="button" class="btn btn-info btn-circle btncelular"  data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-plus-circle"></i> Agregar Asesor</button>
             </li>
           </ol>
-
+         
         </div>
       </div>
   </div>

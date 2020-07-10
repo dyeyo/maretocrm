@@ -13,9 +13,15 @@
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item"><a href="{{ route('clients') }}">Clientes</a></li>
             <li class="breadcrumb-item active">Seguimiento</li>
+            <li class="breadcrumb-item">
+              <button type="button" class="btn btn-info btngrande" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-plus-circle"></i> Agregar Seguimiento</button>
+              <button type="button" class="btn btn-info btncelular btn-circle" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-plus-circle"></i> Agregar Seguimiento</button>
+            </li>
+
           </ol>
-          <button type="button" class="btn btn-info d-none d-lg-block m-l-15" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-plus-circle"></i> Agregar Seguimiento</button>
+         
         </div>
       </div>
     </div>

@@ -11,9 +11,11 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item active">Tareas</li>
-            <li>
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-plus-circle"></i> Agregar Tarea</button>
+            <li class="breadcrumb-item">
+              <button type="button" class="btn btn-info btngrande" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-plus-circle"></i> Agregar Tarea</button>
+              <button type="button" class="btn btn-info btncelular btn-circle" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-plus-circle"></i> </button>
             </li>
           </ol>
 

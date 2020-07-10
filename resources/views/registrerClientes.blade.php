@@ -24,6 +24,7 @@
             {{csrf_field()}}
             <div class="form-group">
               <input type="text" class="form-control" name="name" id="name" placeholder="Nombre Completo">
+              <input type="hidden" name="asesorId" id="asesorId" value="1">
             </div>
             <div class="form-group">
               <input type="email" class="form-control" name="email" id="email" placeholder="Correo Electronico">

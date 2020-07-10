@@ -11,14 +11,18 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Inicio</a></li>
               <li class="breadcrumb-item active">Plantillas de Correos</li>
-              <li>
-              @if ($templatesEmailCount == 13)
-                <button type="button" class="btn btn-danger" disabled>
-                <i class="fa fa-dismit"></i> Limite de Plantillas</button>
-              @else
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
-                <i class="fa fa-plus-circle"></i> Agregar Plantilla</button>
-              @endif
+              <li class="breadcrumb-item">
+                @if ($templatesEmailCount == 13)
+                  <button type="button" class="btn btn-danger btngrande" disabled>
+                  <i class="fa fa-dismit"></i> Limite de Plantillas</button>
+                  <button type="button" class="btn btn-danger btncelular btn-circle" disabled>
+                  <i class="fa fa-dismit"></i></button>
+                @else
+                  <button type="button" class="btn btn-info btngrande" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-plus-circle"></i> Agregar Plantilla</button>
+                  <button type="button" class="btn btn-info btncelular btn-circle" data-toggle="modal" data-target="#exampleModal">
+                  <i class="fa fa-plus-circle"></i> </button>
+                @endif
               </li>
             </ol>
 
