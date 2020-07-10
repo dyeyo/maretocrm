@@ -30,12 +30,15 @@
     <div id="main-wrapper">
     <div id="app">
     @guest
+    <main class="py-4">
+      @yield('contenido')
+    </main>
     @else
     @include('layouts.nav')
     @endguest
-        <main class="py-4">
-            @yield('content')
-        </main>
+      <main class="py-4">
+        @yield('content')
+      </main>
     </div>
     @include('layouts.fotter')
 
