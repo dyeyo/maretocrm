@@ -13,8 +13,8 @@ class AsesorController extends Controller
 {
   public function index()
   {
-    $asesores = User::where('role',2)->get();
-    return view('asesores.index',compact('asesores'));
+    $asesores = User::where('role', 2)->get();
+    return view('asesores.index', compact('asesores'));
   }
 
   public function store(Request $request)
@@ -36,13 +36,13 @@ class AsesorController extends Controller
   public function editAsesor(Request $request, $id)
   {
     $asesor = User::find($id);
-    return view('asesores.edit',compact('asesor'));
+    return view('asesores.edit', compact('asesor'));
   }
 
   public function updateAsesor(Request $request, $id)
   {
     $asesor = User::find($id);
-    if($request->password == ''){
+    if ($request->password == '') {
       $asesor->name = $request->name;
       $asesor->email = $request->email;
       $asesor->numIdentification = $request->numIdentification;

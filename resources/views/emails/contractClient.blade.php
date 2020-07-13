@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+  <h1>Bienvendio tu matricula a sido completada</h1>
+  <p>Este es una copia de su contrato.</p>
+  <br>
   @foreach ($templateEmails as $item)
     <h1> {{$item->title}} {{ $contract['name'] }} </h1>
     <p> {{$item->firstText}} </p>

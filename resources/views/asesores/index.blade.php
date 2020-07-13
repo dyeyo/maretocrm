@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+  @media (max-width: 992px) {
+    .btncelular {
+      display: block !important;
+    }
+    .btngrande{
+      display:none;
+    }
+  }
+  </style>
 <div class="page-wrapper">
   <div class="container-fluid">
     <div class="row page-titles">
@@ -13,13 +23,13 @@
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item active">Asesores</li>
             <li class="breadcrumb-item">
-              <button type="button" class="btn btn-info btn-circle btngrande" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="btn btn-info  btngrande" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-plus-circle"></i> Agregar Asesor</button>
               <button type="button" class="btn btn-info btn-circle btncelular"  data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-plus-circle"></i> Agregar Asesor</button>
             </li>
           </ol>
-         
+
         </div>
       </div>
   </div>

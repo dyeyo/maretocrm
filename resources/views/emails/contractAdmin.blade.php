@@ -25,9 +25,6 @@
             <p>{{ $contract['phone'] }}</p>
         </li>
         <li>
-            <p>{{ $contract['email'] }}</p>
-        </li>
-        <li>
             <p>Terminos y Condiciones: {{ $contract['terminos'] }}</p>
         </li>
         <li>

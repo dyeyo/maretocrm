@@ -19,9 +19,7 @@
               <button type="button" class="btn btn-info btncelular btn-circle" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-plus-circle"></i> Agregar Seguimiento</button>
             </li>
-
           </ol>
-         
         </div>
       </div>
     </div>

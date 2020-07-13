@@ -35,6 +35,10 @@
                 <label for="secondText">Texto Secundario</label>
                 <textarea name="secondText" class="form-control" id="secondText" style="resize: none" cols="30" rows="10">{{$contract->secondText}}</textarea>
               </div>
+              <div class="form-group">
+                <label for="link">Link de pago</label>
+              <input type="text" class="form-control" value="{{$contract->link}}" id="link" name="link" placeholder="Link de pago o Promoción">
+              </div>
               @if($contract->emailId != null || $contract->emailId != '')
                 <div class="form-group">
                   <label>Plantilla de Email</label>

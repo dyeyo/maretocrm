@@ -27,12 +27,12 @@
 <body>
   @foreach ($templateEmails as $item)
     <div class="contenedor" style="width: 650px; background: #fff; margin: auto;">
-      <h3 style="text-align: center;">{{ $student['nombre'] }} Gracias por elegirnos.</h3>
+      <h3 style="text-align: center;">{{ $client->name }} Gracias por elegirnos.</h3>
       <img style='display: block; width: 100%; padding-bottom: 40px;' src='{{ asset('assets/img/01.png') }}'>
       <p>{{$item->firstText}}</p>
       <img src="{{asset('images/'.$item->image)}}" style="width: 50%" alt="">
       <h3 style="text-align: center;">Proceso de Matrícula</h3>
-      <a  style="
+      {{-- <a  style="
         background: #ec1a24;
         color: #fff;
         display: block;
@@ -42,7 +42,7 @@
         font-size: 24px;
         text-decoration: none;
         width: 70%;
-        margin: auto;" href="http://127.0.0.1:8000/contrato?asesor={{$idAsesor}}&contrato={{$idContrato}}&idenClient={{encrypt($client->id)}}&name={{$client->name}}&addrees={{encrypt($client->addrees)}}&city={{encrypt($client->city)}}&numIdenficication={{encrypt($client->numIdenficication)}}&phone={{encrypt($client->phone)}}&email={{encrypt($client->email)}}&scholl={{encrypt($client->scholl)}}" target="_blank">Diligenciar Contrato</a>
+        margin: auto;" href="http://127.0.0.1:8000/contrato?asesor={{$idAsesor}}&contrato={{$idContrato}}&idenClient={{encrypt($client->id)}}&name={{$client->name}}&addrees={{encrypt($client->addrees)}}&city={{encrypt($client->city)}}&numIdenficication={{encrypt($client->numIdenficication)}}&phone={{encrypt($client->phone)}}&email={{encrypt($client->email)}}&scholl={{encrypt($client->scholl)}}" target="_blank">Diligenciar Contrato</a> --}}
       <h3 style="text-align: center;">
       {{-- <a  style="
         background: #ec1a24;
@@ -58,8 +58,17 @@
       <h3 style="text-align: center;"> --}}
         Desde el siguiente link puedes hacer tu pago
       </h3>
-      <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
-         href="{{ $student['linkPago'] }}?">Pagar Ahora</a>
+      {{-- CUOTAS --}}
+      @if ($idContrato == 2 )
+        <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
+        href="https://payco.link/514351" target="_blank">Pagar Ahora</a>
+      @elseif ($idContrato == 3 )
+        <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
+        href="https://payco.link/514354" target="_blank">Pagar Ahora</a>
+      @endif
+
+      {{-- 1600 --}}
+
       <h6 style="text-align: center;">
         <b>NOTA:</b>Por favor, no responder a este correo automático.
       </h6>

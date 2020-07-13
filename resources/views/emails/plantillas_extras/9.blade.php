@@ -32,7 +32,7 @@
     <p>{{$item->firstText}}</p>
     <img src="{{asset('images/'.$item->image)}}" style="width: 50%" alt="">
     <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
-       href="#">INFORMATE MAS AQUI</a>
+       href="https://marketing.lectorami.co/" target="_blank">INFORMATE MAS AQUI</a>
     <h6 style="text-align: center;">
       <b>NOTA:</b>Por favor, no responder a este correo automático.
     </h6>

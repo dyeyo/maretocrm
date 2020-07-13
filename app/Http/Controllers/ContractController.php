@@ -10,6 +10,7 @@ use App\TemplateEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 class ContractController extends Controller
@@ -52,6 +53,7 @@ class ContractController extends Controller
     $contract->title = $request->title;
     $contract->firstText = $request->firstText;
     $contract->secondText = $request->secondText;
+    $contract->link = $request->link;
     $contract->save();
     Session::flash('message', 'Contrato editado con exito');
     return redirect()->route('contracs');
@@ -77,9 +79,9 @@ class ContractController extends Controller
     $client->update();
 
     Mail::to($request->email)->send(new  SendMailContractClient());
-    Mail::to(env('EMAIL_ADMIN'))->send(new SendMailContractAdmin());
+    //Mail::to(env('EMAIL_ADMIN'))->send(new SendMailContractAdmin());
     Session::flash('message', 'Correo electronico enviado y Cliente registrado con exito');
-    return redirect()->route('home');
+    return Redirect::to('https://marketing.lectorami.co/');
   }
 
   public function destroy($id)

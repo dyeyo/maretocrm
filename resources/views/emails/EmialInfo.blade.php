@@ -27,7 +27,7 @@
 <body>
   @foreach ($templateEmails as $item)
     <div class="contenedor" style="width: 650px; background: #fff; margin: auto;">
-      <h3 style="text-align: center;">{{ $student['nombre'] }} Gracias por elegirnos.</h3>
+      <h3 style="text-align: center;">{{ $client->name }} Gracias por elegirnos.</h3>
       <img style='display: block; width: 100%; padding-bottom: 40px;' src='{{ asset('assets/img/01.png') }}'>
       <img style='display: block; width: 100%; padding-bottom: 40px;' src='{{ asset('assets/img/02.png') }}'>
       <p>{{$item->firstText}}</p>
@@ -47,8 +47,13 @@
       <h3 style="text-align: center;">
         Desde el siguiente link puedes hacer tu pago
       </h3>
+      @if ($idContrato == 2 )
       <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
-         href="{{ $student['linkPago'] }}?">Pagar Ahora</a>
+      href="{{$student['linkPago']}}https://payco.link/514351" target="_blank">Pagar Ahora</a>
+    @elseif ($idContrato == 3 )
+      <a  style="background: #ec1a24; color: #fff; display: block; padding: 5px 25px; text-align: center; border-radius: 25px;font-size: 24px;text-decoration: none;width: 70%;margin: auto;"
+      href="{{$student['linkPago']}}https://payco.link/514354" target="_blank">Pagar Ahora</a>
+    @endif
       <h6 style="text-align: center;">
         <b>NOTA:</b>Por favor, no responder a este correo automático.
       </h6>

@@ -13,13 +13,13 @@ class EmailsController extends Controller
   {
     $templatesEmail = TemplateEmail::all();
     $templatesEmailCount = TemplateEmail::count();
-    return view('emails.index',compact('templatesEmail','templatesEmailCount'));
+    return view('emails.index', compact('templatesEmail', 'templatesEmailCount'));
   }
 
   public function editPlantilla($id)
   {
     $templateEmail = TemplateEmail::find($id);
-    return view('emails.edit',compact('templateEmail'));
+    return view('emails.edit', compact('templateEmail'));
   }
 
   public function store(Request $request)
@@ -27,13 +27,12 @@ class EmailsController extends Controller
     $templateEmail = new TemplateEmail;
     $templateEmail->title = $request->title;
     $templateEmail->firstText = $request->firstText;
-    $templateEmail->type =1;
-    if ($request->hasFile('image'))
-    {
-        $file=$request->file('image');
-        $name1=$file->getClientOriginalName();
-        $file->move(public_path().'/images/',$name1);
-        $templateEmail->image=$name1;
+    $templateEmail->type = 1;
+    if ($request->hasFile('image')) {
+      $file = $request->file('image');
+      $name1 = $file->getClientOriginalName();
+      $file->move(public_path() . '/images/', $name1);
+      $templateEmail->image = $name1;
     }
     $templateEmail->save();
     Session::flash('message', 'Template creada con exito');
@@ -45,12 +44,11 @@ class EmailsController extends Controller
     $templateEmail = TemplateEmail::find($id);
     $templateEmail->title = $request->title;
     $templateEmail->firstText = $request->firstText;
-    if ($request->hasFile('image'))
-    {
-        $file=$request->file('image');
-        $name1=$file->getClientOriginalName();
-        $file->move(public_path().'/images/',$name1);
-        $templateEmail->image=$name1;
+    if ($request->hasFile('image')) {
+      $file = $request->file('image');
+      $name1 = $file->getClientOriginalName();
+      $file->move(public_path() . '/images/', $name1);
+      $templateEmail->image = $name1;
     }
     $templateEmail->save();
     Session::flash('message', 'Template actualizada con exito');
@@ -66,11 +64,11 @@ class EmailsController extends Controller
 
   public function loadTemplate($id)
   {
-    return response()->json(Contracts::select('emailId')->where('id',$id)->get());
+    return response()->json(Contracts::select('emailId', 'link')->where('id', $id)->get());
   }
 
   public function loadTemplatePromotion($id)
   {
-    return response()->json(Contracts::select('emailId')->where('id',$id)->get());
+    return response()->json(Contracts::select('emailId', 'link')->where('id', $id)->get());
   }
 }

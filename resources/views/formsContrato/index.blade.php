@@ -106,6 +106,10 @@
             <textarea name="secondText" class="form-control" id="secondText" style="resize: none" cols="30" rows="10"></textarea>
           </div>
           <div class="form-group">
+            <label for="link">Link de pago</label>
+            <input type="text" class="form-control" id="link" name="link" placeholder="Link de pago o Promoción">
+          </div>
+          <div class="form-group">
             <label>Plantilla de Email</label>
             <select class="form-control select2" name="emailId" style="width: 100%" id="emailId">
               <option value="">Debes seleccionar una opción</option>

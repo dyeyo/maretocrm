@@ -37,6 +37,7 @@ function dataTemplateEmailSendContract() {
     $.getJSON(route("loadTemplate", { id: tipoContrato }), function (data) {
       console.log(data);
       $("#idtemplate").val(data[0].emailId);
+      $("#link").val(data[0].link);
     });
   }
 }
@@ -47,6 +48,7 @@ function dataTemplateEmailSendEmialPromotion() {
     $.getJSON(route("loadTemplatePromotion", { id: tipoContrato }), function (data) {
       console.log(data[0].emailId);
       $("#idtemplateEmial").val(data[0].emailId);
+      $("#link").val(data[0].link);
     });
   }
 }

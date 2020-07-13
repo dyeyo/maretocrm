@@ -57,6 +57,7 @@
             <input type="hidden" name="scholl" id="scholl"/>
             <input type="hidden" name="nombre" id="nombre"/>
             <input type="hidden" name="idtemplate" id="idtemplate"/>
+            <input type="hidden" name="linkPago" id="link"/>
             </div>
           </div>
           <div class="form-group">
@@ -68,10 +69,10 @@
               @endforeach
             </select>
           </div>
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label>Link de pago</label>
             <input type="text" class="form-control" name="linkPago" id="linkPago" placeholder="Ingresa el link de pago" />
-          </div>
+          </div> --}}
           <div class="form-group">
               <input type="hidden" name="emailAsesor" id="emailAsesor" value="{{Auth()->user()->email}}" />
           </div>
