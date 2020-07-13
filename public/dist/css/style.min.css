@@ -25448,6 +25448,7 @@ ul.list-inline li {
   margin: 0;
   background: 0 0;
   font-size: 12px;
+  float: right;
 }
 .page-titles .breadcrumb li a {
   color: #212529;
