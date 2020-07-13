@@ -85,7 +85,7 @@
       allowClear: true,
       placeholder: "Seleccione una opcion.."
     });
-    $('#tabla').DataTable({ language:
+    $('.table').DataTable({ language:
       {
         sProcessing: "Procesando...",
         sLengthMenu: "Mostrar _MENU_ registros",
