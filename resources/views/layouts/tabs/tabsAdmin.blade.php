@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 formcontent">
-        <h1>Clientes Matriculados</h1>
+        <h1>Clientes Registrados</h1>
         <div class="table-responsive">
           <table class="table" id="tabla">
             <thead>
@@ -77,7 +77,7 @@
                       {{csrf_field()}}
                       {{ method_field('put') }}
                       <input type="hidden" name="pay" value="SI">
-                      <button type="submit" class="btn btn-success">Matriculado</button>
+                      <button type="submit" class="btn btn-success">Registrado</button>
                     </form>
                   <td>{{ Carbon\Carbon::parse($client->created_at)->format('d-m-Y') }}</td>
                 </tr>
@@ -94,13 +94,13 @@
     <div class="row">
       <div class="col-12 formcontent">
         <h1>Confirmación de Inscripción</h1>
-        <form class="ui form" id="formularioInfoPago" action="{{route('sendinfopay')}}" method="POST">
+        <form class="ui form" id="" action="{{route('sendinfopay')}}" method="POST">
           {{ method_field('post') }}
           {{csrf_field()}}
           <div class="alert alert-info" role="alert">
             <label>Información del Titular del Contrato</label>
             <div class="form-group col-md-12">
-              <select class="form-control datoCliente select2" onchange="dataClient()" style="width: 100%" name="nombreEstudiante">
+              <select class="form-control datoCliente select2" onchange="dataClient()" style="width: 100%" name="nombreCliente">
                 <option value=""></option>
                 @foreach ($allClients as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
@@ -110,8 +110,7 @@
             <input type="hidden" name="scholl" id="scholl"/>
             <input type="hidden" name="nombre" id="nombre"/>
             <input type="hidden" name="idtemplate" id="idtemplate"/>
-          <input type="hidden" name="linkPago" id="link"/>
-
+            <input type="hidden" name="linkPago" id="link"/>
             </div>
           </div>
           <div class="form-group">
@@ -147,7 +146,7 @@
           <div class="alert alert-info" role="alert">
             <label>Nombre del Cliente</label>
             <div class="form-group col-md-12">
-              <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreEstudiante">
+              <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreCliente">
                 <option value=""></option>
                 @foreach ($allClientsPromocion as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
@@ -167,10 +166,11 @@
               @endforeach
             </select>
           </div>
-
           <button type="submit" id="infopago" class="btn btn-success btn-block"> Enviar email </button>
         </form>
       </div>
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" defer></script>
+

@@ -33,7 +33,9 @@
     display:none;
   }
   .breadcrumb{margin-top: -22px !important;}
-
+  #datosSecundarios{
+    display:none
+  }
 }
 </style>
     <div id="main-wrapper">
@@ -50,11 +52,13 @@
       </main>
     </div>
     @include('layouts.fotter')
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="{{ asset('js/perfect-scrollbar.jquery.min.js') }}"></script>
     <script src="{{ asset('js/waves.js') }}"></script>
+
     <script src="{{ asset('js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('js/custom.min.js') }}"></script>
     <script src="{{ asset('extras/popper/popper.min.js') }}"></script>
@@ -66,13 +70,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="{{ asset('js/validacion.js') }}"></script>
     <script src="{{ asset('js/functions.js') }}"></script>
+
+    <script src="{{ asset('js/validacion.js') }}"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {
+
       $('.select2').select2({
         allowClear: true,
         placeholder: "Seleccione una opcion.."
@@ -106,12 +111,6 @@
           },
         }
       });
-      let alerta = $(".close").length;
-      if (alerta == 1) {
-        setTimeout(function () {
-          $(".alert-success").fadeOut(1500);
-        }, 3000);
-      }
     });
   </script>
 </body>

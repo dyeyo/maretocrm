@@ -62,7 +62,7 @@
               </div>
             @endif
             @if (Auth()->user()->role == 1)
-            <h2>Estudiantes Matriculados</h2>
+            <h2>Clientes Registrados</h2>
               <div class="table-responsive">
                 <table class="table" id="tabla">
                   <thead>
@@ -106,7 +106,7 @@
                 </table>
               </div>
             @else
-              <h2>Seguimiento de mis Clientes Matriculados</h2>
+              <h2>Seguimiento de mis Clientes Registrados</h2>
               <div class="table-responsive">
                 <table class="table" id="tabla">
                   <thead>
@@ -127,7 +127,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($clientsListAsesorMatriculado as $client)
+                    @foreach ($clientsListAsesorRegistrado as $client)
                       <tr>
                         <td>{{$client->name}}</td>
                         <td>{{$client->numIdenficication}}</td>
@@ -210,7 +210,7 @@
               </div>
             @endif
             @if (Auth()->user()->role == 1)
-              <h2>Estudiantes Por Asesor</h2>
+              <h2>Clientes Por Asesor</h2>
               <div class="table-responsive">
                 <table class="table" id="tabla">
                   <thead>
@@ -282,7 +282,7 @@
           {{ method_field('post') }}
           {{csrf_field()}}
           <input type="hidden" name="asesorId" id="asesorId" value="{{Auth()->user()->id}}" />
-          <div class="alert alert-info" role="alert">
+          <div class="alert alert-info"  role="alert">
             <div class="form-group">
               <label>Nombre Completo del Titular del Contrato</label>
               <input
@@ -316,45 +316,209 @@
                 placeholder="Correo Electronico"
               />
             </div>
-          </div>
-          <div class="form-group">
-            <label>Colegio/Universidad</label>
-            <input type="text" class="form-control" name="scholl" id="scholl" placeholder="Colegio o Universidad" />
-          </div>
-          <div class="form-group">
-            <label>Dirección</label>
-            <input
-              value="{{ old('addrees') }}"
-              type="text"
+              <input
+              value="{{ Auth()->user()->contry }}"
+              type="hidden"
               class="form-control"
-              name="addrees"
-              id="addrees"
-              placeholder="Dirección"
+              name="contry"
+              id="contry"
             />
           </div>
-          <div class="form-group">
-            <label>Ciudad</label>
-            <input
-              value="{{ old('city') }}"
-              type="text"
-              class="form-control"
-              name="city"
-              id="city"
-              placeholder="Ciudad"
-            />
-          </div>
-          <div class="form-group">
-            <label>No de identificación</label>
-            <input
-              value="{{ old('numIdenficication') }}"
-              type="text"
-              class="form-control"
-              name="numIdenficication"
-              id="numIdenficication"
-              placeholder="no Identificación"
-            />
-          </div>
+          <div id="datosSecundarios">
+            @if(Auth()->user()->contry == 'Colombia')
+              <div class="form-group">
+                <label>Departamento</label>
+                <select class="form-control select2" style="width: 100%" name="city">
+                  <option value=""></option>
+                  <option value="Amazonas">Amazonas</option>
+                  <option value="Antioquia">Antioquia</option>
+                  <option value="Arauca">Arauca</option>
+                  <option value="Atlanticp">Atlanticp</option>
+                  <option value="Bolivar">Bolivar</option>
+                  <option value="Boyaca">Boyaca</option>
+                  <option value="Caldas">Caldas</option>
+                  <option value="Caqueta">Caqueta</option>
+                  <option value="Casanare">Casanare</option>
+                  <option value="Cauca">Cauca</option>
+                  <option value="Cesar">Cesar</option>
+                  <option value="Chocp">Chocp</option>
+                  <option value="Cundinamarca">Cundinamarca</option>
+                  <option value="Cordoba">Cordoba</option>
+                  <option value="Guainia">Guainia</option>
+                  <option value="Guaviare">Guaviare</option>
+                  <option value="Huila">Huila</option>
+                  <option value="La Guajira">La Guajira</option>
+                  <option value="Magdalena">Magdalena</option>
+                  <option value="Meta">Meta</option>
+                  <option value="Nariño">Nariño</option>
+                  <option value="Norte de Santander">Norte de Santander</option>
+                  <option value="Putumayo">Putumayo</option>
+                  <option value="Quindio">Quindio</option>
+                  <option value="Risaralda">Risaralda</option>
+                  <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                  <option value="Santander">Santander</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Tolima">Tolima</option>
+                  <option value="Valledel Cauca">Valledel Cauca</option>
+                  <option value="Vaupués">Vaupués</option>
+                  <option value="Vichada">Vichada</option>
+                </select>
+              </div>
+            @elseif(Auth()->user()->contry == 'Estados Unidos')
+              <div class="form-group">
+                <label>Estado</label>
+                <select class="form-control select2"  style="width: 100%" name="city">
+                  <option value=""></option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="American Samoa">American Samoa</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="District Of Columbia">District Of Columbia</option>
+                    <option value="Federated States Of Micronesia">Federated States Of Micronesia</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Palau">Palau</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virgin Islands">Virgin Islands</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+              </div>
+            @elseif(Auth()->user()->contry == 'España')
+              <div class="form-group">
+                <label>Provincia</label>
+                <select class="form-control select2"  style="width: 100%" name="city">
+                  <option value=""></option>
+                  <option value="Almería">Almería</option>
+                  <option value="Cádiz">Cádiz</option>
+                  <option value="Córdoba">Córdoba</option>
+                  <option value="Granada">Granada</option>
+                  <option value="Huelva">Huelva</option>
+                  <option value="Jaén">Jaén</option>
+                  <option value="Málaga">Málaga</option>
+                  <option value="Sevilla">Sevilla</option>
+                  <option value="Huesca">Huesca</option>
+                  <option value="Teruel">Teruel</option>
+                  <option value="Zaragoza">Zaragoza</option>
+                  <option value="Asturias">Asturias</option>
+                  <option value="Balears, Illes">Balears, Illes</option>
+                  <option value="Palmas, Las">Palmas, Las</option>
+                  <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                  <option value="Cantabria">Cantabria</option>
+                  <option value="Ávila">Ávila</option>
+                  <option value="Burgos">Burgos</option>
+                  <option value="León">León</option>
+                  <option value="Palencia">Palencia</option>
+                  <option value="Salamanca">Salamanca</option>
+                  <option value="Segovia">Segovia</option>
+                  <option value="Soria">Soria</option>
+                  <option value="Valladolid">Valladolid</option>
+                  <option value="Zamora">Zamora</option>
+                  <option value="Albacete">Albacete</option>
+                  <option value="Ciudad Real">Ciudad Real</option>
+                  <option value="Cuenca">Cuenca</option>
+                  <option value="Guadalajara">Guadalajara</option>
+                  <option value="Toledo">Toledo</option>
+                  <option value="Barcelona">Barcelona</option>
+                  <option value="Girona">Girona</option>
+                  <option value="Lleida">Lleida</option>
+                  <option value="Tarragona">Tarragona</option>
+                  <option value="Alicante/Alacant">Alicante/Alacant</option>
+                  <option value="Castellón/Castelló">Castellón/Castelló</option>
+                  <option value="Valencia/València">Valencia/València</option>
+                  <option value="Badajoz">Badajoz</option>
+                  <option value="Cáceres">Cáceres</option>
+                  <option value="Coruña, A">Coruña, A</option>
+                  <option value="Lugo">Lugo</option>
+                  <option value="Ourense">Ourense</option>
+                  <option value="Pontevedra">Pontevedra</option>
+                  <option value="Madrid">Madrid</option>
+                  <option value="Murcia">Murcia</option>
+                  <option value="Navarra">Navarra</option>
+                  <option value="Araba/Álava">Araba/Álava</option>
+                  <option value="Bizkaia">Bizkaia</option>
+                  <option value="Gipuzkoa">Gipuzkoa</option>
+                  <option value="Rioja, La">Rioja, La</option>
+                  <option value="Ceuta">Ceuta</option>
+                  <option value="Melilla">Melilla</option>
+                </select>
+              </div>
+            @endif
+            <div class="form-group">
+              <label>No de identificación</label>
+              <input
+                value="{{ old('numIdenficication') }}"
+                type="text"
+                class="form-control"
+                name="numIdenficication"
+                id="numIdenficication"
+                placeholder="no Identificación"
+              />
+            </div>
+            <div class="form-group">
+              <label>Tipo de Negocio</label>
+              <input type="text" class="form-control" name="scholl" id="scholl" placeholder="Negocio" />
+            </div>
+            <div class="form-group">
+              <label>Dirección</label>
+              <input
+                value="{{ old('addrees') }}"
+                type="text"
+                class="form-control"
+                name="addrees"
+                id="addrees"
+                placeholder="Dirección"
+              />
+            </div>
 
+
+          </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -363,4 +527,9 @@
     </div>
   </div>
 </div>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
+
 @endsection

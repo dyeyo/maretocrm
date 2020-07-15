@@ -58,7 +58,30 @@
                   @enderror
               </div>
             </div>
-
+            <div class="form-group row">
+              <label for="contry" class="col-md-12 col-form-label">País</label>
+              <div class="col-md-12">
+                @if($asesor->contry == 'Colombia')
+                <select class="form-control select2" style="width: 100%" name="contry" id="contry">
+                  <option value="Colmbia">Colmbia</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="España">España</option>
+                </select>
+                @elseif($asesor->contry == 'Estados Unidos')
+                <select class="form-control select2" style="width: 100%" name="contry" id="contry">
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="España">España</option>
+                </select>
+                @elseif($asesor->contry == 'España')
+                <select class="form-control select2" style="width: 100%" name="contry" id="contry">
+                  <option value="España">España</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Colombia">Colombia</option>
+                </select>
+                @endif
+              </div>
+            </div>
             <div class="form-group row">
                 <label for="email" class="col-md-12 col-form-label">Correo Electronico</label>
 

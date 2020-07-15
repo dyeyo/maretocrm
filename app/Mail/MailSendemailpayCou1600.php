@@ -12,18 +12,20 @@ use Illuminate\Queue\SerializesModels;
 
 class MailSendemailpayCou1600 extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    public function __construct()
-    {}
+  public function __construct()
+  {
+  }
 
-    public function build(Request $request)
-    {
-      $client = Clients::where('id',$request->nombreEstudiante)->first();
-      $student = $request->all();
-      $idContrato = intval($request->tipoContrato);
-      $idAsesor = Auth()->user()->id;
-      $templateEmails = TemplateEmail::where('type',1)->get();
-      return $this->view('emails.EmailRegistro2',compact('student','idAsesor','templateEmails','idContrato','client'));
-    }
+  public function build(Request $request)
+  {
+    $client = Clients::where('name', $request->nombre)->first();
+    $student = $request->all();
+    $idContrato = intval($request->tipoContrato);
+    $idAsesor = Auth()->user()->id;
+    $templateEmails = TemplateEmail::where('type', 1)->get();
+
+    return $this->view('emails.EmailRegistro2', compact('student', 'idAsesor', 'templateEmails', 'idContrato', 'client'));
+  }
 }

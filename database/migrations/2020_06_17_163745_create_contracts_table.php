@@ -6,29 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateContractsTable extends Migration
 {
-    public function up()
-    {
-      Schema::create('contracts', function (Blueprint $table) {
-        $table->id();
+  public function up()
+  {
+    Schema::create('contracts', function (Blueprint $table) {
+      $table->id();
 
-        $table->string('title')->nullable();
-        $table->longText('firstText')->nullable();
-        $table->longText('secondText')->nullable();
-        $table->integer('type')->nullable();
-        $table->bigInteger('emailId')->unsigned()->nullable();
+      $table->string('title')->nullable();
+      $table->longText('firstText')->nullable();
+      $table->longText('secondText')->nullable();
+      $table->integer('type')->nullable();
+      $table->string('link')->nullable();
+      $table->bigInteger('emailId')->unsigned()->nullable();
 
-        $table->foreign('emailId')->references('id')->on('template_emails');
-        $table->timestamps();
-      });
-    }
+      $table->foreign('emailId')->references('id')->on('template_emails');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('contracts');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('contracts');
+  }
 }

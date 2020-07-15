@@ -60,6 +60,7 @@
                     <th>Nombre Completo</th>
                     <th>N° Cedula</th>
                     <th>Correo</th>
+                    <th>País</th>
                     <th>Telefono</th>
                     <th>Editar</th>
                     <th>Desactivar</th>
@@ -71,6 +72,7 @@
                         <td>{{$asesor->name}}  {{$asesor->lastname}}</td>
                         <td>{{$asesor->numIdentification}}</td>
                         <td>{{$asesor->email}}</td>
+                        <td>{{$asesor->contry}}</td>
                         <td>{{$asesor->phone}}</td>
                         <td><a  class="btn btn-warning" href="{{ route('editAsesor',$asesor->id) }}">Editar</a></td>
                         @if ($asesor->password == '')
@@ -142,7 +144,17 @@
                 @enderror
             </div>
           </div>
-
+          <div class="form-group row">
+            <label for="contry" class="col-md-12 col-form-label">País</label>
+            <div class="col-md-12">
+              <select class="form-control select2" style="width: 100%" name="contry" id="contry">
+                <option value=""></option>
+                <option value="Colombia">Colombia</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="España">España</option>
+              </select>
+            </div>
+          </div>
           <div class="form-group row">
               <label for="email" class="col-md-12 col-form-label">Correo Electronico</label>
 
@@ -180,5 +192,8 @@
     </div>
   </div>
 </div>
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
 @endsection

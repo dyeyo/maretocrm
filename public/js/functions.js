@@ -17,8 +17,9 @@ function dataClient() {
   var datoCliente = $(".datoCliente").val();
   $.getJSON(route("loadClient", { id: datoCliente }), function (data) {
     console.log(data);
-    $("#name").val(data[0].name);
+    $("#nombre").val(data[0].name);
     $("#email").val(data[0].email);
+    $("#scholl").val(data[0].scholl);
   });
 }
 

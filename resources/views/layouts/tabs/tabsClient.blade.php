@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 formcontent">
-        <h1>Mis Clientes Matriculados</h1>
+        <h1>Mis Clientes Registrados</h1>
         <div class="table-responsive">
           <table class="table">
             <thead>
@@ -47,7 +47,7 @@
           <div class="alert alert-info" role="alert">
             <label>Información del Titular del Contrato</label>
             <div class="form-group col-md-12">
-              <select class="form-control datoCliente select2" onchange="dataClient()" style="width: 100%" name="nombreEstudiante">
+              <select class="form-control datoCliente select2" onchange="dataClient()" style="width: 100%" name="nombreCliente">
                 <option value=""></option>
                 @foreach ($clients as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>
@@ -93,7 +93,7 @@
           <div class="alert alert-info" role="alert">
             <label>Nombre del Cliente</label>
             <div class="form-group col-md-12">
-              <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreEstudiante">
+              <select class="form-control datoClienteEmail select2" onchange="dataClientEmial()" style="width: 100%" name="nombreCliente">
                 <option value=""></option>
                 @foreach ($allClientsAsesor as $client)
                   <option value="{{$client->id}}">{{$client->name}}</option>

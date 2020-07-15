@@ -43,8 +43,8 @@
         font-size: 24px;
         text-decoration: none;
         width: 70%;
-        margin: auto;" href="https://crm.lectorami.co/contrato?asesor={{$idAsesor}}&contrato={{$idContrato}}&idenClient={{encrypt($client->id)}}&name={{$client->name}}&addrees={{encrypt($client->addrees)}}&city={{encrypt($client->city)}}&numIdenficication={{encrypt($client->numIdenficication)}}&phone={{encrypt($client->phone)}}&email={{encrypt($client->email)}}&scholl={{encrypt($client->scholl)}}" target="_blank">Diligenciar Contrato</a>
-      <h3 style="text-align: center;">
+        margin: auto;" href="https://crm.lectorami.co/contrato?asesor={{$idAsesor}}&contrato={{$idContrato}}&idenClient={{encrypt($client->id)}}&name={{$client->name}}&addrees={{encrypt($client->addrees)}}&city={{encrypt($client->city)}}&numIdenficication={{encrypt($client->numIdenficication)}}&phone={{encrypt($client->phone)}}&email={{encrypt($client->email)}}&scholl={{encrypt($client->scholl)}}&contry={{$client->contry}}" target="_blank">Diligenciar Contrato</a>
+  <h3 style="text-align: center;">
         Desde el siguiente link puedes hacer tu pago
       </h3>
       @if ($idContrato == 2 )

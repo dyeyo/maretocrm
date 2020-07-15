@@ -11,17 +11,19 @@ use Illuminate\Queue\SerializesModels;
 
 class LectorAmiContado extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    public function __construct(){}
+  public function __construct()
+  {
+  }
 
-    public function build(Request $request)
-    {
-      $client = Clients::where('id',$request->nombreEstudiante)->first();
-      $student = $request->all();
-      $idContrato = intval($request->tipoContrato);
-      $idAsesor = Auth()->user()->id;
-      $templateEmails = TemplateEmail::where('type',1)->where('id',$request->tipoContrato)->get();
-      return $this->view('emails.EmailRegistro',compact('student','idAsesor','templateEmails','idContrato','client'));
-    }
+  public function build(Request $request)
+  {
+    $client = Clients::where('name', $request->nombre)->first();
+    $student = $request->all();
+    $idContrato = intval($request->tipoContrato);
+    $idAsesor = Auth()->user()->id;
+    $templateEmails = TemplateEmail::where('type', 1)->where('id', $request->tipoContrato)->get();
+    return $this->view('emails.EmailRegistro', compact('student', 'idAsesor', 'templateEmails', 'idContrato', 'client'));
+  }
 }

@@ -5,7 +5,7 @@
               <div class="round align-self-center round-success"><i class="fas fa-user-graduate"></i></div>
               <div class="m-l-10 align-self-center">
                   <h3 class="m-b-0">{{$clientesPaySuccessCount}}</h3>
-                  <h5 class="text-muted m-b-0">Estudiates Matriculados</h5></div>
+                  <h5 class="text-muted m-b-0">Clientes Registrados</h5></div>
           </div>
       </div>
   </div>
@@ -17,7 +17,7 @@
               <div class="round align-self-center round-info"><i class="fas fa-graduation-cap"></i></div>
               <div class="m-l-10 align-self-center">
                   <h3 class="m-b-0">{{$clientesPayPendingCount}}</h3>
-                  <h5 class="text-muted m-b-0">Estudiantes Pendientes por Pagar</h5></div>
+                  <h5 class="text-muted m-b-0">Clientes Pendientes por Pagar</h5></div>
           </div>
       </div>
   </div>

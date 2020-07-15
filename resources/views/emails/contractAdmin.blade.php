@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Un estudiante nuevo de a registrado</h1>
+    <h1> Un Cliente nuevo de a registrado</h1>
     <ul>
         <li>
             <p>{{ $contract['name'] }}</p>

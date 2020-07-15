@@ -108,4 +108,8 @@
     </div>
   </div>
 </div>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
 @endsection

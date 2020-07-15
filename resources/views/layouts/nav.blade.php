@@ -49,7 +49,7 @@
               <a class="waves-effect waves-dark text-white" href="{{ route('home') }}"><i id="icon-nav" class="text-white fas fa-home"></i><span class="hide-menu txtMenu">Inicio</span></a>
             </li>
             <li>
-              <a class="waves-effect waves-dark text-white" href="{{ route('clients') }}"><i id="icon-nav" class="text-white fas fa-user-graduate"></i><span class="hide-menu txtMenu">Gestion de Clientes</span></a>
+              <a class="waves-effect waves-dark text-white" href="{{ route('clients') }}"><i id="icon-nav" class="text-white fas fa-user"></i><span class="hide-menu txtMenu">Gestion de Clientes</span></a>
             </li>
             <li>
               <a class="waves-effect waves-dark text-white" href="{{ route('emails') }}"><i id="icon-nav" class="text-white fas fa-mail-bulk"></i><span class="hide-menu txtMenu">Gestion de Correos</span></a>
@@ -71,7 +71,7 @@
               <a class="waves-effect waves-dark text-white" href="{{ route('home') }}"><i id="icon-nav" class="text-white fas fa-home"></i><span class="hide-menu txtMenu">Inicio</span></a>
             </li>
             <li>
-              <a class="waves-effect waves-dark text-white" href="{{ route('clients') }}"><i id="icon-nav" class="text-white fas fa-user-graduate"></i><span class="hide-menu txtMenu">Gestion de Clientes</span></a>
+              <a class="waves-effect waves-dark text-white" href="{{ route('clients') }}"><i id="icon-nav" class="text-white fas fa-user"></i><span class="hide-menu txtMenu">Gestion de Clientes</span></a>
             </li>
            </ul>
          @endif
