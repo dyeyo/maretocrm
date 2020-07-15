@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/7e8f963e2a.js" crossorigin="anonymous"></script>
     <link href="{{ asset('extras/morrisjs/morris.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/myStyles.css')}}" rel="stylesheet">
     <link href="{{ asset('css/style.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/pages/dashboard1.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
@@ -51,29 +51,27 @@
     </div>
     @include('layouts.fotter')
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="{{ asset('js/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('js/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('js/waves.js') }}"></script>
-    <script src="{{ asset('js/sidebarmenu.js') }}"></script>
-    <script src="{{ asset('js/custom.min.js') }}"></script>
-    <script src="{{ asset('extras/popper/popper.min.js') }}"></script>
-    <script src="{{ asset('extras/flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('extras/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ asset('extras/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('extras/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
-    <script src="{{ asset('extras/jquery.easy-pie-chart/easy-pie-chart.init.js') }}"></script>
-    <script src="{{ asset('extras/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-    <script src="{{ asset('extras/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('extras/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/dashboard2.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="{{ asset('js/validacion.js') }}"></script><script type="text/javascript">
+  <script src="{{ asset('js/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script src="{{ asset('js/waves.js') }}"></script>
+  <script src="{{ asset('js/sidebarmenu.js') }}"></script>
+  <script src="{{ asset('js/custom.min.js') }}"></script>
+  <script src="{{ asset('extras/popper/popper.min.js') }}"></script>
+  <script src="{{ asset('extras/flot/jquery.flot.js') }}"></script>
+  <script src="{{ asset('extras/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
+  <script src="{{ asset('extras/sparkline/jquery.sparkline.min.js') }}"></script>
+  <script src="{{ asset('extras/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+  <script src="{{ asset('extras/jquery.easy-pie-chart/easy-pie-chart.init.js') }}"></script>
+  <script src="{{ asset('extras/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('js/dashboard2.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+  <script src="{{ asset('js/validacion.js') }}"></script><script type="text/javascript">
   $(document).ready(function() {
     $('.select2').select2({
       allowClear: true,
