@@ -127,7 +127,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($clientsListAsesorRegistrado as $client)
+                    @foreach ($clientsListAsesorMatriculado as $client)
                       <tr>
                         <td>{{$client->name}}</td>
                         <td>{{$client->numIdenficication}}</td>
